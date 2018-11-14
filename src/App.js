@@ -48,7 +48,7 @@ class App extends Component {
   render() {
     const { content } = this.state
     return (
-      <div className="container-fluid">
+      <div className="container-fluid" className="App-header">
         <Row>
           <Col span={12}>
             <Button bsStyle="primary" onClick={this.slidePrev}>
@@ -66,10 +66,11 @@ class App extends Component {
               onSelect={this.onSelect}
               ref={r => (this.slider = r)}
               version={4}
+              controls={false}
             >
               {content.map((article, index) =>
                 <div key={index}>
-                  <Quiz />
+                  <Quiz id={index} />
                 </div>
               )}
             </Slider>
